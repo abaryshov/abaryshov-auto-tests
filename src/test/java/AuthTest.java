@@ -12,19 +12,12 @@ public class AuthTest {
     public void shouldAuthorizeTest() {
         open("https://github.com");
         $("[href='/login']").click();
-        sleep(2000);
         $("[id='login_field']").sendKeys("ABaryshov");
-        sleep(2000);
         $("[id='password']").sendKeys("04061996ABaryshov");
-        sleep(2000);
         $(".js-sign-in-button").click();
-        sleep(2000);
         $(".Header").shouldBe(visible);
         $("[aria-label='View profile and more']").click();
-        sleep(2000);
         $(byText("Your profile")).click();
-        sleep(2000);
         $(".vcard-names").shouldBe(visible);
     }
-
 }
